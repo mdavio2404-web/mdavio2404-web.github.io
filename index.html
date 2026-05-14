@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Eshan Catering</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <div class="container navbar">
+
+            <!-- Logo -->
+            <div class="logo">
+                <img src="assets/Logo Catering.png" alt="Logo Eshan Catering">
+            </div>
+
+            <!-- Navigation -->
+            <nav>
+                <ul class="nav-links">
+
+                    <li>
+                        <a href="#hero" class="nav-link active">Beranda</a>
+                    </li>
+
+                    <li>
+                        <a href="#layanan" class="nav-link">Layanan</a>
+                    </li>
+
+                    <li>
+                        <a href="#menu" class="nav-link">Menu</a>
+                    </li>
+
+                    <li>
+                        <a href="#about" class="nav-link">Tentang</a>
+                    </li>
+
+                    <li>
+                        <a href="#kontak" class="nav-link">Kontak</a>
+                    </li>
+
+                </ul>
+            </nav>
+
+            <!-- CTA -->
+            <a href="#form" class="btn">
+                Pesan Sekarang
+            </a>
+
+        </div>
+
+    </header>
+
+    <!-- HERO -->
+    <section id="hero" class="hero">
+
+        <img src="assets/Background Hero Section.jpg" alt="Hero Catering" class="hero-image">
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+
+            <h1>
+                Catering Lezat dan Porsi Melimpah di Jambi
+            </h1>
+
+            <p>
+                Pesan nasi box harian atau catering acara kantor,
+                enak, hemat, dan tepat waktu.
+            </p>
+
+            <a href="#menu" class="btn">
+                Lihat Menu
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- LAYANAN -->
+    <section id="layanan" class="services section-padding">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Layanan Utama</h2>
+            </div>
+
+            <div class="services-container">
+
+                <article class="service-card">
+
+                    <img src="assets/Nasi Box.jpg" alt="Nasi Box">
+
+                    <h3>Nasi Box</h3>
+
+                </article>
+
+                <article class="service-card">
+
+                    <img src="assets/Event Kantor Prasmanan.jpg" alt="Prasmanan">
+
+                    <h3>Event Kantor</h3>
+
+                </article>
+
+                <article class="service-card">
+
+                    <img src="assets/Paket Snack.jpg" alt="Paket Snack">
+
+                    <h3>Paket Snack</h3>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- MENU -->
+    <section id="menu" class="menu section-padding">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Menu</h2>
+            </div>
+
+            <!-- Search -->
+            <div class="search-box">
+
+                <input type="text" id="search-menu" placeholder="Cari menu...">
+
+            </div>
+
+            <!-- Filter -->
+            <div class="filter-buttons">
+
+                <button class="filter-btn active">Semua</button>
+                <button class="filter-btn">Ayam</button>
+                <button class="filter-btn">Daging</button>
+                <button class="filter-btn">Udang</button>
+                <button class="filter-btn">Nila</button>
+
+            </div>
+
+            <!-- Menu Container -->
+            <div class="menu-container">
+
+                <!-- MENU CARD -->
+                <article class="menu-card" data-category="ayam">
+
+                    <img src="assets/Ayam Geprek.jpg" alt="Ayam Geprek">
+
+                    <div class="menu-info">
+
+                        <h3>Ayam Geprek</h3>
+
+                        <p>Rp 20.000</p>
+
+                        <button class="btn detail-btn">
+                            Detail
+                        </button>
+
+                    </div>
+
+                </article>
+
+                <article class="menu-card" data-category="ayam">
+
+                    <img src="assets/Ayam Bakar.jpg" alt="Ayam Bakar">
+
+                    <div class="menu-info">
+
+                        <h3>Ayam Bakar</h3>
+
+                        <p>Rp 20.000</p>
+
+                        <button class="btn detail-btn">
+                            Detail
+                        </button>
+
+                    </div>
+
+                </article>
+
+                <article class="menu-card" data-category="daging">
+
+                    <img src="assets/Malbi Daging.jpg" alt="Malbi Daging">
+
+                    <div class="menu-info">
+
+                        <h3>Malbi Daging</h3>
+
+                        <p>Rp 20.000</p>
+
+                        <button class="btn detail-btn">
+                            Detail
+                        </button>
+
+                    </div>
+
+                </article>
+
+                <article class="menu-card" data-category="udang">
+
+                    <img src="assets/Udang Asam Manis.jpg" alt="Udang Asam Manis">
+
+                    <div class="menu-info">
+
+                        <h3>Udang Asam Manis</h3>
+
+                        <p>Rp 20.000</p>
+
+                        <button class="btn detail-btn">
+                            Detail
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about section-padding">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Kenapa Memilih Kami?</h2>
+            </div>
+
+            <div class="about-container">
+
+                <!-- LEFT -->
+                <div class="about-content">
+
+                    <div class="about-box">
+
+                        <div class="number">
+                            1
+                        </div>
+
+                        <div>
+
+                            <h3>Porsi Lebih Banyak</h3>
+
+                            <p>
+                                Porsi besar dan mengenyangkan tanpa mengurangi kualitas rasa.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="about-box">
+
+                        <div class="number">
+                            2
+                        </div>
+
+                        <div>
+
+                            <h3>Lebih Enak</h3>
+
+                            <p>
+                                Menggunakan bahan pilihan dan racikan bumbu terbaik.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="about-box">
+
+                        <div class="number">
+                            3
+                        </div>
+
+                        <div>
+
+                            <h3>Tepat Waktu</h3>
+
+                            <p>
+                                Pesanan diproses cepat dan selalu tepat waktu.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- RIGHT -->
+                <div class="about-image">
+
+                    <img src="assets/Kenapa Memilih Kami Background.jpg" alt="About Catering">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- TESTIMONI -->
+    <section class="testimonials section-padding">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Testimoni</h2>
+            </div>
+
+            <div class="testimonial-container">
+
+                <article class="testimonial-card">
+
+                    <p>
+                        "Porsinya besar dan rasanya enak banget!"
+                    </p>
+
+                    <div class="customer">
+
+                        <i class="fa-regular fa-circle-user"></i>
+
+                        <div>
+
+                            <h3>Rina</h3>
+
+                            <span>Acara Ulang Tahun</span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <article class="testimonial-card">
+
+                    <p>
+                        "Pelayanannya cepat dan makanannya masih hangat."
+                    </p>
+
+                    <div class="customer">
+
+                        <i class="fa-regular fa-circle-user"></i>
+
+                        <div>
+
+                            <h3>Andi</h3>
+
+                            <span>Acara Kantoran</span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- KONTAK -->
+    <section id="kontak" class="contact section-padding">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Kontak Kami</h2>
+            </div>
+
+            <div class="social-container">
+
+                <a href="#" class="social-card">
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <a href="#" class="social-card">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+
+                <a href="#" class="social-card">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FORM -->
+    <section id="form" class="order-form section-padding">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Form Pemesanan</h2>
+            </div>
+
+            <form>
+
+                <div class="form-group">
+
+                    <label for="nama">
+                        Nama
+                    </label>
+
+                    <input type="text" id="nama" placeholder="Masukkan nama">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <input type="email" id="email" placeholder="Masukkan email">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="pesanan">
+                        Pesanan
+                    </label>
+
+                    <textarea id="pesanan" rows="5" placeholder="Masukkan pesanan"></textarea>
+
+                </div>
+
+                <button type="submit" class="btn">
+                    Kirim Pesanan
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="container footer-container">
+
+            <div>
+
+                <h3>Eshan Catering</h3>
+
+                <p>
+                    Catering lezat dan porsi melimpah di Jambi.
+                </p>
+
+            </div>
+
+            <div>
+
+                <h3>Menu</h3>
+
+                <ul>
+
+                    <li>Beranda</li>
+                    <li>Layanan</li>
+                    <li>Menu</li>
+                    <li>Kontak</li>
+
+                </ul>
+
+            </div>
+
+            <div>
+
+                <h3>Kontak</h3>
+
+                <ul>
+
+                    <li>089691498537</li>
+                    <li>@cateringjambi.eshan</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 Eshan Catering. All rights reserved.
+        </p>
+
+    </footer>
+
+    <!-- Back To Top -->
+    <button class="back-to-top">
+        ↑
+    </button>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
