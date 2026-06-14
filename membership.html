@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Lapangan Futsal</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Font Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <style>
+    .font-poppins{
+        font-family: 'Poppins', sans-serif;
+    }
+    </style>
+
+</head>
+<body class="font-poppins selection:bg-black selection:text-white bg-gray-100 overflow-x-hidden">
+
+
+    <!-- Overlay Pop Up -->
+    <div id="overlay" class="hidden fixed inset-0 bg-black/70"></div>
+
+    <!-- Isi Pop Up -->
+    <div class="popup fixed hidden inset-0 m-auto z-999 w-11/12 md:w-9/12 lg:w-1/2 h-1/3 lg:h-1/2 bg-white flex items-center flex-col">
+        <p class="font-bold text-2xl mt-10">Konfirmasi Berlangganan</p>
+        <p class="mt-7 text-center font-semibold text-xl mx-2">Kamu akan berlangganan paket ini. Lanjutkan untuk aktivasi membership.</p>
+        <div class="flex justify-center gap-16 items-center mt-10">
+            <button class="lanjutkan bg-[#2E7D32] text-2xl hover:bg-black hover:text-[#2E7D32] font-bold text-white p-2 lg:p-3 rounded-lg cursor-pointer">Lanjutkan</button>
+            <button class="batal bg-[#EF4444] text-2xl hover:bg-black hover:text-[#EF4444] font-bold text-white p-2 lg:p-3 rounded-lg cursor-pointer">Batal</button>
+        </div>
+    </div>
+
+    <!-- Teks Membership -->
+    <div class="menu text-center mt-10 mb-5 sm:mt-10 sm:mb-8">
+        <p class="text-xl sm:text-3xl font-bold">Membership Futsal</p>
+    </div>
+
+    <!-- Cards Membership -->
+    <div class="menu w-full grid grid-cols-2 px-2 gap-4 sm:gap-5 sm:grid-cols-3 xl:px-6 2xl:px-6">
+        <div class="odd:bg-black even:bg-[#2E7D32] rounded-t-[25px] overflow-hidden ">
+            <p class="text-white font-bold mt-3 sm:mt-5 text-xl md:text-2xl lg:text-3xl lg:mt-7 px-4 sm:px-7 lg:px-10">Basic</p>
+            <p class="text-white text-sm mt-3 md:text-lg px-4 sm:px-7 lg:px-10">Cocok untuk pemain reguler yang ingin bermain lebih hemat.</p>
+            <p class="text-white text-2xl lg:text-4xl mt-3 sm:mt-7 lg:mt-8 px-4 sm:px-7 lg:px-10">Rp.299.000</p>
+            <div class="cursor-pointer transition-all duration-300 mt-3 sm:mt-5 lg:mt-7  flex justify-center items-center px-4 sm:px-7 lg:px-10">
+                <a href="" class="langganan flex font-bold p-[2px] lg:p-1 justify-center hover:bg-[#2E7D32] hover:text-white transition-all duration-300 rounded-sm md:rounded-lg items-center w-full bg-white text-lg lg:text-xl">Berlangganan Sekarang</a>
+            </div>
+            <p class="text-white mt-3 px-4 sm:px-7 lg:px-10">Keuntungan :</p>
+            <div class="w-full border-t border-gray-200 mt-2 md:mt-4 lg:mt-6 rounded-t-[25px]">
+                <div class="flex flex-col mb-5">
+                    <div class="flex">
+                        <i class="fa-solid fa-check text-white px-3 pt-3"></i>
+                        <p class="text-white pt-2">4 jam bermain per bulan</p>
+                    </div>
+                    <div class="flex">
+                        <i class="fa-solid fa-check text-white px-3 pt-3"></i>
+                        <p class="text-white pt-2">Diskon booking lapangan 10%</p>
+                    </div>
+                    <div class="flex">
+                        <i class="fa-solid fa-check text-white px-3 pt-3"></i>
+                        <p class="text-white pt-2">Prioritas reservasi lapangan</p>
+                    </div>
+                    <div class="flex">
+                        <i class="fa-solid fa-check text-white px-3 pt-3"></i>
+                        <p class="text-white pt-2">Akses grup komunitas futsal</p>
+                    </div>
+                    <div class="flex">
+                        <i class="fa-solid fa-check text-white px-3 pt-3"></i>
+                        <p class="text-white pt-2">Free air mineral setiap kunjungan</p>
+                    </div>
+                    <div class="flex">
+                        <i class="fa-solid fa-check text-white px-3 pt-3"></i>
+                        <p class="text-white pt-2">Kesempatan ikut mini tournament bulanan</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="odd:bg-black even:bg-[#2E7D32] rounded-t-[25px] overflow-hidden">
+            <p class="text-white font-bold mt-3 sm:mt-5 text-xl md:text-2xl lg:text-3xl lg:mt-7 px-4 sm:px-7 lg:px-10">Elite</p>
+            <p class="text-white text-sm mt-3 md:text-lg px-4 sm:px-7 lg:px-10">Lebih banyak jam bermain dan keuntungan eksklusif</p>
+            <p class="text-white text-2xl lg:text-4xl mt-3 sm:mt-7 lg:mt-8 px-4 sm:px-7 lg:px-10">Rp.599.000</p>
+            <div class="mt-3 sm:mt-5 lg:mt-7  flex justify-center items-center px-4 sm:px-7 lg:px-10">
+                <a href="" class="langganan flex font-bold p-[2px] lg:p-1 justify-center hover:bg-black hover:text-white transition-all duration-300 rounded-sm md:rounded-lg items-center w-full bg-white text-lg lg:text-xl">Berlangganan Sekarang</a>
+            </div>
+            <p class="text-white mt-3 px-4 sm:px-7 lg:px-10">Keuntungan :</p>
+            <div class="w-full border-t border-gray-200 mt-2 md:mt-4 lg:mt-6 rounded-t-[25px]">
+                <div class="flex flex-col mb-5">
+                    <div class="flex">
+                        <i class="fa-solid fa-check text-white px-3 pt-3"></i>
+                        <p class="text-white pt-2">10 jam bermain per bulan</p>
+                    </div>
+                    <div class="flex">
+                        <i class="fa-solid fa-check text-white px-3 pt-3"></i>
+                        <p class="text-white pt-2">Diskon booking lapangan 20%</p>
+                    </div>
+                    <div class="flex">
+                        <i class="fa-solid fa-check text-white px-3 pt-3"></i>
+                        <p class="text-white pt-2">Prioritas reservasi tertinggi</p>
+                    </div>
+                    <div class="flex">
+                        <i class="fa-solid fa-check text-white px-3 pt-3"></i>
+                        <p class="text-white pt-2">Gratis peminjaman rompi latihan</p>
+                    </div>
+                    <div class="flex">
+                        <i class="fa-solid fa-check text-white px-3 pt-3"></i>
+                        <p class="text-white pt-2">Free minuman setiap kunjungan</p>
+                    </div>
+                    <div class="flex">
+                        <i class="fa-solid fa-check text-white px-3 pt-3"></i>
+                        <p class="text-white pt-2">Akses event dan coaching clinic</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="odd:bg-black even:bg-[#2E7D32] rounded-t-[25px] overflow-hidden">
+            <p class="text-white font-bold mt-3 sm:mt-5 text-xl md:text-2xl lg:text-3xl lg:mt-7 px-4 sm:px-7 lg:px-10">Pro</p>
+            <p class="text-white text-sm mt-3 md:text-lg px-4 sm:px-7 lg:px-10">Paket fleksibel untuk kebutuhan tim.</p>
+            <p class="text-white text-2xl lg:text-4xl mt-3 sm:mt-7 lg:mt-8 px-4 sm:px-7 lg:px-10">Rp.1.500.000</p>
+            <div class="mt-3 sm:mt-5 lg:mt-7  flex justify-center items-center px-4 sm:px-7 lg:px-10">
+                <a href="" class="langganan flex font-bold p-[2px] lg:p-1 justify-center hover:bg-[#2E7D32] hover:text-white transition-all duration-300 rounded-sm md:rounded-lg items-center w-full bg-white text-lg lg:text-xl">Berlangganan Sekarang</a>
+            </div>
+            <p class="text-white mt-3 px-4 sm:px-7 lg:px-10">Keuntungan :</p>
+            <div class="w-full border-t border-gray-200 mt-2 md:mt-4 lg:mt-6 rounded-t-[25px]">
+                <div class="flex flex-col mb-5">
+                    <div class="flex">
+                        <i class="fa-solid fa-check text-white px-3 pt-3"></i>
+                        <p class="text-white pt-2">Hingga 30 jam bermain per bulan</p>
+                    </div>
+                    <div class="flex">
+                        <i class="fa-solid fa-check text-white px-3 pt-3"></i>
+                        <p class="text-white pt-2">Jadwal Latihan Tetap</p>
+                    </div>
+                    <div class="flex">
+                        <i class="fa-solid fa-check text-white px-3 pt-3"></i>
+                        <p class="text-white pt-2">Diskon Booking Tambahan</p>
+                    </div>
+                    <div class="flex">
+                        <i class="fa-solid fa-check text-white px-3 pt-3"></i>
+                        <p class="text-white pt-2">Prioritas turnamen dan event</p>
+                    </div>
+                    <div class="flex">
+                        <i class="fa-solid fa-check text-white px-3 pt-3"></i>
+                        <p class="text-white pt-2">Penyimpanan perlengkapan tim</p>
+                    </div>
+                    <div class="flex">
+                        <i class="fa-solid fa-check text-white px-3 pt-3"></i>
+                        <p class="text-white pt-2">Pendampingan program latihan</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="membership.js"></script>
+</body>
+</html>

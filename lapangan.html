@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Lapangan Futsal</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Font Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <style>
+    .font-poppins{
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .hiddenTag {
+        display: none;
+    }
+
+    .activeTabs {
+        background-color: #2E7D32;
+    }
+    </style>
+
+</head>
+<body class="font-poppins selection:bg-black selection:text-white bg-gray-100 overflow-x-hidden">
+
+    <!-- Lapangan Teks -->
+    <div id="lapangan" class="menu text-center mt-5 mb-5 sm:mt-10 sm:mb-8">
+        <p class="text-xl sm:text-3xl font-bold">Lapangan Tersedia</p>
+    </div>
+
+    <!-- Searching -->
+    <div class="menu mb-5 lg:mb-10">
+    <form action="" class="flex justify-center">
+        <input type="text" id="judul-lapangan" name="lapangan" placeholder="Cari Lapangan" class="search-lapangan w-full mx-6 lg:w-1/2 lg:mx-0 pl-3 md:pl-5 lg:pl-10 border border-black rounded-lg p-2 focus:border-2 focus:border-[#2E7D32] focus:outline-none">
+    </form>
+    </div>
+
+    <!-- Tabs Component -->
+    <div class="menu mx-auto w-fit rounded-xl overflow-hidden h-16 mb-4 flex gap-1">
+        <div class="tabs hover:bg-[#2E7D32] cursor-pointer w-32 h-full flex justify-center items-center bg-black">
+            <p class="text-white">1</p>
+        </div>
+        <div class="tabs hover:bg-[#2E7D32] cursor-pointer w-32 h-full flex justify-center items-center bg-black">
+            <p class="text-white">2</p>
+        </div>
+        <div class="tabs hover:bg-[#2E7D32] cursor-pointer w-32 h-full flex justify-center items-center bg-black">
+            <p class="text-white">3</p>
+        </div>
+    </div>
+
+    <!-- Cards Lapangan -->
+    <div id="container-lapangan" class="menu w-full grid grid-cols-2 px-2 gap-4 sm:gap-5 sm:grid-cols-3 xl:px-6 2xl:px-6"></div>
+
+
+    <script src="lapangan.js"></script>
+</body>
+</html>

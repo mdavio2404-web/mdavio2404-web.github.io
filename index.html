@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Lapangan Futsal</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Font Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <style>
+    .font-poppins{
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .hiddenTag {
+        display: none;
+    }
+    </style>
+
+</head>
+<body class="font-poppins selection:bg-black selection:text-white bg-gray-100 overflow-x-hidden">
+
+    <!-- Toast Up Notifications Loading -->
+    <div id="loading" class="toast w-1/2 h-16 lg:h-16 lg:w-1/3 bg-[#3B82F6] fixed top-0 left-1/2 -translate-x-1/2 z-[999] shadow-2xl rounded-xl hidden">
+        <div class="absolute rounded-full bg-black top-1/2 -translate-y-1/2 w-8 h-8 sm:w-12 sm:h-12 flex justify-center items-center">
+            <i class="text-xl lg:text-4xl  text-white fa-solid fa-spinner fa-spin fa-spin-pulse"></i>
+        </div>
+        <p class="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 text-white text-center text-xs sm:text-lg font-bold">Mengirim Pesan....</p>
+    </div>
+
+    <!-- Toast Up Notifications Berhasil -->
+    <div id="berhasil" class="toast w-1/2 h-16 lg:h-16 lg:w-1/3 bg-[#2E7D32] fixed top-0 left-1/2 -translate-x-1/2 z-[999] shadow-2xl rounded-xl hidden">
+        <div class="absolute rounded-full bg-black top-1/2 -translate-y-1/2 w-8 h-8 sm:w-12 sm:h-12 flex justify-center items-center">
+            <i class="text-xl lg:text-4xl  text-white fa-solid fa-check"></i>
+        </div>
+        <p class="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 text-white text-center text-xs sm:text-lg font-bold">Pesan Berhasil Dikirim!</p>
+        <p class="cancel-toast absolute right-0 text-4xl lg:text-6xl bottom-1/2 translate-y-1/2 text-white cursor-pointer">×</p>
+    </div>
+
+    <!-- Toast Up Notifications Gagal -->
+    <div id="gagal" class="toast w-1/2 h-16 lg:h-16 lg:w-1/3 bg-[#EF4444] fixed top-0 left-1/2 -translate-x-1/2 z-[999] shadow-2xl rounded-xl hidden">
+        <div class="absolute rounded-full bg-black top-1/2 -translate-y-1/2 w-8 h-8 sm:w-12 sm:h-12 flex justify-center items-center">
+            <i class="text-xl lg:text-4xl  text-[#EF4444] fa-solid fa-triangle-exclamation"></i>
+        </div>
+        <p class="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 text-[#7F1D1D] text-center text-xs sm:text-lg font-bold">Pesan Gagal Dikirim!</p>
+        <p class="cancel-toast absolute right-0 text-4xl lg:text-6xl bottom-1/2 translate-y-1/2 text-white cursor-pointer">×</p>
+    </div>
+
+    <!-- Container Hero + Navbar -->
+    <div id="beranda" class="menu beranda w-full relative">
+
+        <!-- Isi Navbar Mobile -->
+            <div class="menu-mobile absolute top-0 left-0 w-1/2 h-full bg-white z-30 lg:hidden xl:hidden 2xl:hidden overflow-hidden -translate-x-full transition-transform duration-500 ease-in-out">
+
+                <div class="relative h-full w-full">
+                    <img src="assets/logofutsal.png" alt="logo futsal" class="absolute w-30">
+
+                    <div class="w-10 h-10 absolute top-0 right-0 rounded-full shadow-xl bg-black active:bg-slate-800 p-5 mr-3 flex justify-center items-center mt-28 cursor-pointer">
+                        <i class="fa-solid fa-times fa-2x text-white"></i>
+                    </div>
+
+                    <p class="absolute top-0 left-0 ml-2 text-lg font-black text-black mt-30">DindaFutsal</p>
+
+                    <div id="navbar-mobile">
+                    </div>
+                </div>
+            </div>
+
+        <div id="slider" class="flex transition-transform duration-700 ease-in-out">
+            <img src="assets/hero.jpg" alt="lapangan" class="imgAnimation flex-shrink-0 w-full h-[700px] object-cover flex-shrink-0">
+            <img src="assets/rumput3.jpg" alt="lapangan" class="imgAnimation flex-shrink-0 w-full h-[700px] object-cover flex-shrink-0">
+            <img src="assets/semen2.jpg" alt="lapangan" class="imgAnimation flex-shrink-0 w-full h-[700px] object-cover flex-shrink-0">
+        </div>
+
+        <div class="absolute top-0 left-0 w-full h-full bg-black/50"></div>
+        
+        <!-- Parent Section Hero + Navbar -->
+        <div class="absolute top-0 left-0 w-full h-20 flex items-center justify-between z-10">
+
+            <!-- Logo + Company Name -->
+            <div class="flex justify-center items-center h-full">
+                <img src="assets/logofutsal.png" alt="logo Futsal" class="w-30 hidden lg:block xl:block 2xl:block">
+                <p class="font-black text-white text-2xl hidden xl:block 2xl:block">DindaFutsal</p>
+
+                <!-- Mobile & Ipad Navbar -->
+                <div class="lg:hidden xl:hidden 2xl:hidden">
+                    <i class="fas fa-bars text-white cursor-pointer text-3xl sm:text-4xl"></i>
+                </div>
+            </div>
+            
+                <!-- Mobile & Ipad Logo -->
+            <div class="flex gap-2 items-center">
+                <img src="assets/logofutsal.png" alt="logo Futsal" class="w-16 sm:w-24 lg:hidden xl:hidden 2xl:hidden">
+                <p class="font-black text-white text-2xl sm:text-3xl xl:hidden 2xl:hidden">DindaFutsal</p>
+            </div>
+
+            <!-- Navbar -->
+            <div id="navbar-dekstop" class="h-full flex justify-between items-center z-20 hidden xl:flex 2xl:flex">                
+            </div>
+
+            <!-- CTA Membership -->
+            <div class="p-1 sm:p-2 rounded-sm sm:rounded-md bg-white group hover:bg-black hover:cursor-pointer transition-color duration-700 mr-4">
+                <a class="font-bold text-md group-hover:text-white text-sm sm:text-md" href="membership.html">Membership</a>
+            </div>
+        </div>
+
+        <!-- Parent Booking -->
+        <div class="absolute inset-0 w-full flex flex-col justify-center items-center">
+            <p class="text-white font-black text-3xl md:text-4xl mb-3 s:mb-4 lg:text-5xl xl:text-5xl 2xl:text-5xl lg:mb-5 xl:mb-5 2xl:mb-5 text-center px-3">Reservasi Lapangan Futsal</p>
+            <p class="text-white text-center text-sm xl:text-xl 2xl:text-xl px-5">Pesan lapangan Futsal dengan mudah, cepat dan aman</p>
+            <div class="flex w-full justify-between">
+                <div class="rounded-full flex justify-center items-center bg-black group hover:bg-white">
+                    <button class="img-slider-before p-3 text-xl text-white group-hover:text-black cursor-pointer">&lt;</button>
+                </div>
+
+                <div class="rounded-full flex justify-center items-center bg-black group hover:bg-white">
+                    <button class="img-slider-after p-3 text-xl text-white group-hover:text-black cursor-pointer">&gt;</button>
+                </div>
+            </div>
+
+            <div class="lg:p-3 xl:p-3 2xl:p-3 p-2 rounded-md bg-white group hover:bg-black hover:scale-110 transition-color transtion-transform duration-700">
+                <a href="lapangan.html" class="xl:text-xl 2xl:text-xl font-semibold group-hover:text-white px-1">Lihat Lapangan</a>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Lapangan Teks -->
+    <div id="lapangan" class="menu text-center mt-12 mb-8 sm:mt-20 sm:mb-10">
+        <p class="text-xl sm:text-3xl font-bold">Lapangan Tersedia</p>
+    </div>
+
+    <!-- Cards Lapangan -->
+    <div id="container-lapangan" class="menu w-full grid grid-cols-2 px-2 gap-4 sm:gap-5 sm:grid-cols-3 xl:px-6 2xl:px-6"></div>
+
+    <!-- Fasilitas Teks -->
+    <div id="fasilitas" class="menu text-center mt-20 mb-15 sm:mt-20 sm:mb-10">
+        <p class="text-xl sm:text-3xl font-bold">Fasilitas</p>
+    </div>
+
+    <!-- Cards Fasilitas -->
+    <div id="container-fasilitas" class="menu w-full px-0 sm:px-3 lg:px-7 xl:px-7 2xl:px-7 gap-8 sm:gap-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3"></div>
+    
+    <!-- Tentang Kami Teks -->
+    <div id="tentangkami" class="menu text-center mt-20 mb-10 lg:mb-15 sm:mt-20 sm:mb-10">
+        <p class="text-xl sm:text-3xl font-bold">Tentang Kami</p>
+    </div>
+
+    <!-- Tentang Kami Section -->
+    <div id="tentangkami-container" class="menu w-full mb-10 lg:flex lg:mb-20 xl:flex xl:mb-20 2xl:flex 2xl:mb-20">
+
+        <!-- Left -->
+        <div class="lg:flex lg:flex-col lg:justify-center lg:items-center lg:w-1/2">
+            <h1 class="lg:mt-6 text-lg sm:text-xl xl:text-3xl font-bold uppercase text-center mb-5">We Are Dinda Futsal</h1>
+            <p class="mt-2 block text-center lg:block lg:mt-4 px-3 tracking-wider">Selamat datang di lapangan futsal kami, tempat terbaik untuk menikmati olahraga sepak bola dalam ruangan dengan fasilitas yang nyaman dan berkualitas. Kami hadir untuk memberikan pengalaman bermain yang seru, aman, dan menyenangkan bagi semua kalangan, mulai dari pemula hingga pemain berpengalaman.</p>
+            <p class="mt-2 block text-center lg:block lg:mt-4 px-3 tracking-wider">Kami menyediakan lapangan dengan permukaan yang terawat, pencahayaan yang terang, serta area yang bersih dan nyaman. Selain itu, kami juga dilengkapi dengan berbagai fasilitas pendukung seperti area parkir luas, ruang istirahat, toilet bersih, serta kantin untuk memenuhi kebutuhan pengunjung selama berada di lokasi.</p>
+            <p class="lg:mt-2 lg:mt-4 lg:px-3 lg:text-center lg:tracking-wider lg:block hidden">Dengan komitmen memberikan pelayanan terbaik, kami selalu menjaga kualitas fasilitas dan kenyamanan pengunjung. Kami berharap lapangan futsal ini dapat menjadi tempat berkumpul, berolahraga, dan menciptakan momen kebersamaan yang menyenangkan bersama teman, komunitas, maupun keluarga.</p>
+            <div class="lg:hidden flex flex-col justify-center items-center mt-3">
+                <div class="lg:hidden w-[200px] h-[200px] rounded-full bg-[#2E7D32] flex justify-center items-center overflow-hidden text-center mt-3">
+                    <img src="assets/aboutus.png" alt="ceo">
+                </div>
+                <p class="mt-2 italic text-bold">CEO Dinda Futsal</p>
+            </div>
+        </div>
+
+        <!-- Right -->
+        <div class="lg:w-1/2 lg:flex lg:flex-col lg:justify-center lg:items-center hidden">
+            <div class="w-[400px] h-[400px] rounded-full shadow-xl bg-[#2E7D32] flex justify-center items-center overflow-hidden">
+                <img src="assets/aboutus.png" alt="ceo">
+            </div>
+            <p class="mt-3 italic text-2xl font-bold">CEO Dinda Futsal</p>
+        </div>
+    </div>
+
+    <!-- Kenapa Memilih Kami -->
+    <div class="menu h-[500px] lg:flex lg:items-center w-full mb-30">
+
+        <!-- Left -->
+        <div class="lg:block hidden w-1/2 flex justify-center items-center h-full">
+            <img src="assets/semen1.jpg" alt="gambarfutsal" class="h-full w-full object-center rounded-2xl">
+        </div>
+
+        <!-- Right -->
+        <div id="kenapamemilihkami" class="flex flex-col lg:w-1/2 w-full px-1 gap-2 h-full"></div>
+
+    </div>
+
+    <!-- Kontak Kami -->
+    <div id="kontak" class="menu relative w-full">
+        <img src="assets/semen2.jpg" alt="kontak-kami" class="w-full h-[200px] lg:h-[250px] object-center">
+        <div class="absolute inset-0 bg-black/50 flex flex-col justify-center items-center">
+            <h1 class="px-3 text-white font-bold text-lg sm:text-xl lg:text-4xl text-center mb-2 sm:mb-3">Kontak Kami</h1>
+            <p class="px-3 text-slate-400 text-sm sm:text-lg text-center font-semibold">Hubungi kami dibawah ini untuk reservasi lapangan dan informasi lebih lanjut.</p>
+        </div>
+    </div>
+
+    <!-- Mobile Kontak -->
+    <div id="kontak-mobile" class="menu flex justify-center items-center lg:hidden"></div>
+
+    <div class="menu mt-10 lg:mt-15 w-full flex flex-col lg:flex-row">
+
+        <!-- Left -->
+        <div id="kontak-left"
+            class="hidden lg:flex lg:w-1/2 h-full justify-end">
+        </div>
+
+
+        <!-- Right -->
+        <div class="w-full lg:w-1/2 flex flex-col lg:flex">
+            <div class="flex flex-col justify-center items-center mt-10">
+                <p class="font-bold text-2xl">Hubungi Kami</p>
+            </div>
+            <form action="" class="flex flex-col mt-10 px-6">
+
+                <!-- Nama -->
+                <label class="text-lg" for="nama">Nama</label>
+                <div class="relative">
+                    <i class="fa-solid fa-user absolute left-3 top-1/2 -translate-y-1/2 text-gray-500"></i>
+                    <input type="text" id="nama" name="nama" placeholder="Masukkan nama..." class="nama w-full pl-10 border border-black rounded-lg p-2 focus:border-2 focus:border-[#2E7D32] focus:outline-none">
+                </div>
+                <p class="hidden pesan-eror italic text-red-500">Nama Masih Kosong!</p>
+
+                <!-- Email -->
+                <label class="text-lg mt-5" for="name">Email</label>
+                <div class="relative">
+                    <i class="fa-solid fa-envelope absolute left-3 top-1/2 -translate-y-1/2 text-gray-500"></i>
+                <input class="email w-full pl-10 border border-black rounded-lg p-2 focus:border-5 focus:border-[#2E7D32] focus:outline-none" type="email" name="email" id="email" placeholder="Masukkan email...">
+                </div>
+                <p class="hidden pesan-eror italic text-red-500">Email Masih Kosong!</p>
+
+                <!-- No Telfon -->
+                <label class="text-lg mt-5" for="nohp">Nomor Telepon</label>
+                <div class="relative">
+                    <i class="fa-solid fa-phone absolute left-3 top-1/2 -translate-y-1/2 text-gray-500"></i>
+                <input class="notelfon w-full pl-10 border border-black rounded-lg p-2 focus:border-5 focus:border-[#2E7D32] focus:outline-none" type="tel" name="nohp" id="nohp" placeholder="Masukkan No Telepon...">
+                </div>
+                <p class="hidden pesan-eror italic text-red-500">No Telfon Masih Kosong!</p>
+
+                <!-- Pesan -->
+                <label class="text-lg mt-5" for="pesan">Pesan</label>
+                <textarea
+                    id="pesan"
+                    name="pesan"
+                    rows="5"
+                    class="pesan w-full border border-black rounded-lg focus:border-5 focus:border-[#2E7D32] focus:outline-none"
+                    placeholder="Tulis pesan kamu di sini..."></textarea>
+                <p class="hidden pesan-eror italic text-red-500">Pesan Masih Kosong!</p>
+
+                <!-- Button Kirim -->
+                <button type="button" class="btnform mt-10 w-full p-3 px-3 bg-black text-white rounded-lg hover:cursor-pointer">Kirim!</button>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- FAQ -->
+    
+    <!-- FAQ Teks -->
+    <div id="faq" class="menu text-center mt-20 mb-10 lg:mb-15 sm:mt-20 sm:mb-10">
+        <p class="text-xl sm:text-2xl lg:text-3xl font-bold">Frquently Asked Question</p>
+    </div>
+
+    <!-- FAQ Cards -->
+    <div class="menu mt-5 md:mt-7 mx-20 md:mx-40 lg:mx-65 h-16 bg-[#2E7D32] relative rounded-t-lg md:rounded-t-xl lg:rounded-t-2xl">
+        <p class="absolute top-1/2 -translate-y-1/2 text-white font-semibold text-sm md:text-lg lg:text-xl ml-2 pr-7">Bagaimana Cara Melakukan Booking?</p>
+        <div class="dropdown top-1/2 -translate-y-1/2 absolute right-0 w-4 h-4 md:h-5 md:w-5 lg:w-8 lg:h-8 bg-white mr-2 md:mr-3 lg:mr-4 flex justify-center items-center cursor-pointer">
+            <i class="close-tag fa fa-caret-down"></i>
+            <div class="open-tag hidden">
+                <i class="fa fa-caret-up"></i>
+            </div>
+        </div>
+    </div>
+    <div class="menu open-faq hidden mb-2 md:lg-3 lg:mb-5 mx-20 md:mx-40 lg:mx-65 bg-[#2E7D32] rounded-b-lg md:rounded-b-xl lg:rounded-b-2xl pb-2 md:pb-3 lg:pb-5">
+        <p class="pt-2 ml-2 text-white text-sm md:text-lg lg:text-xl pr-7">Pengguna dapat memilih lapangan, tanggal, dan jam bermain yang tersedia, kemudian mengisi data pemesan dan melanjutkan ke proses pembayaran.</p>
+    </div>
+
+    <div class="menu mt-5 md:mt-7 mx-20 md:mx-40 lg:mx-65 h-16 bg-[#2E7D32] relative rounded-t-lg md:rounded-t-xl lg:rounded-t-2xl">
+        <p class="absolute top-1/2 -translate-y-1/2 text-white font-semibold text-sm md:text-lg lg:text-xl ml-2 pr-10">Apakah saya harus menjadi member untuk melakukan booking?</p>
+        <div class="dropdown top-1/2 -translate-y-1/2 absolute right-0 w-4 h-4 md:h-5 md:w-5 lg:w-8 lg:h-8 bg-white mr-2 md:mr-3 lg:mr-4 flex justify-center items-center cursor-pointer">
+            <i class="close-tag fa fa-caret-down"></i>
+            <div class="open-tag hidden">
+                <i class="fa fa-caret-up"></i>
+            </div>
+        </div>
+    </div>
+    <div class="menu open-faq hidden mb-2 md:lg-3 lg:mb-5 mx-20 md:mx-40 lg:mx-65 bg-[#2E7D32] rounded-b-lg md:rounded-b-xl lg:rounded-b-2xl pb-2 md:pb-3 lg:pb-5">
+        <p class="pt-2 ml-2 text-white text-sm md:text-lg lg:text-xl pr-7">Tidak. Booking dapat dilakukan oleh member maupun non member. Namun member mendapatkan akses melalui akun yang telah terdaftar.</p>
+    </div>
+
+    <div class="menu mt-5 md:mt-7 mx-20 md:mx-40 lg:mx-65 h-16 bg-[#2E7D32] relative rounded-t-lg md:rounded-t-xl lg:rounded-t-2xl">
+        <p class="absolute top-1/2 -translate-y-1/2 text-white font-semibold text-sm md:text-lg lg:text-xl ml-2 pr-7">Bagaimana cara menjadi member?</p>
+        <div class="dropdown top-1/2 -translate-y-1/2 absolute right-0 w-4 h-4 md:h-5 md:w-5 lg:w-8 lg:h-8 bg-white mr-2 md:mr-3 lg:mr-4 flex justify-center items-center cursor-pointer">
+            <i class="close-tag fa fa-caret-down"></i>
+            <div class="open-tag hidden">
+                <i class="fa fa-caret-up"></i>
+            </div>
+        </div>
+    </div>
+    <div class="menu open-faq hidden mb-2 md:lg-3 lg:mb-5 mx-20 md:mx-40 lg:mx-65 bg-[#2E7D32] rounded-b-lg md:rounded-b-xl lg:rounded-b-2xl pb-2 md:pb-3 lg:pb-5">
+        <p class="pt-2 ml-2 text-white text-sm md:text-lg lg:text-xl pr-7">Pengguna dapat melakukan registrasi akun, mengisi data diri, dan melakukan pembayaran membership. Setelah pembayaran berhasil, akun dapat digunakan untuk login.</p>
+    </div>
+
+    <!-- Footer -->
+<footer class="menu mt-10 w-full bg-[#2E7D32] text-white">
+    <div class="max-w-6xl mx-auto px-6 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+        <!-- Brand -->
+        <div>
+            <h1 class="text-2xl font-bold text-white">Dinda Futsal</h1>
+            <p class="mt-3 text-sm text-gray-300">
+                Tempat reservasi lapangan futsal terbaik, cepat, mudah, dan terpercaya.
+            </p>
+        </div>
+
+        <!-- Quick Link -->
+        <div>
+            <h2 class="font-bold mb-3">Menu</h2>
+            <ul class="space-y-2 text-sm text-gray-300">
+                <li><a href="#beranda" class="hover:text-black">Beranda</a></li>
+                <li><a href="#lapangan" class="hover:text-black">Lapangan</a></li>
+                <li><a href="#fasilitas" class="hover:text-black">Fasilitas</a></li>
+                <li><a href="#kontak" class="hover:text-black">Kontak</a></li>
+            </ul>
+        </div>
+
+        <!-- Kontak -->
+        <div>
+            <h2 class="font-bold mb-3">Kontak</h2>
+            <p class="text-sm text-gray-300">📞 0896-9149-8537</p>
+            <p class="text-sm text-gray-300 mt-2">📧 dindafutsal@gmail.com</p>
+            <p class="text-sm text-gray-300 mt-2">📍 Jambi, Indonesia</p>
+        </div>
+
+        <!-- Social Media -->
+        <div>
+            <h2 class="font-bold mb-3">Follow Kami</h2>
+            <div class="flex gap-4 text-xl">
+                <a href="#" class="hover:text-white"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-white"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="#" class="hover:text-white"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#" class="hover:text-white"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bottom -->
+    <div class="border-t border-gray-700 text-center py-4 text-sm text-gray-400">
+        © 2026 Dinda Futsal. All rights reserved.
+    </div>
+</footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
